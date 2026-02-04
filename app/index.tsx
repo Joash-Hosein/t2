@@ -66,7 +66,6 @@ export default function Index() {
       }}
       options={{useNewConnection: false}}>
         <SafeAreaProvider style={styles.Safecontainer}>
-          
         <SafeAreaView style={styles.container}>
         <Homebanner />
       </SafeAreaView>    

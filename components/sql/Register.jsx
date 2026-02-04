@@ -90,6 +90,9 @@ const styles = StyleSheet.create({
             paddingHorizontal: 8,
         },
       link:{
+         borderColor: 'blue',
+        borderRadius: 5,
+        padding: 10,
         marginTop: 10,
         color: 'blue',
       }

@@ -1,8 +1,8 @@
+import { Link } from 'expo-router';
 import { useSQLiteContext } from 'expo-sqlite';
 import React, { useState } from 'react';
 import { Alert, Button, StyleSheet, TextInput } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Link } from 'expo-router';
 
 
 const Login = () => {
@@ -72,6 +72,9 @@ const styles = StyleSheet.create({
             paddingHorizontal: 8,
         },
          link:{
+        borderColor: 'blue',
+        borderRadius: 5,
+        padding: 10,
         marginTop: 10,
         color: 'blue',
       }
