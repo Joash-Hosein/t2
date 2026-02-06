@@ -2,6 +2,7 @@ import { SQLiteProvider } from "expo-sqlite";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import Homebanner from "../components/banners/homebanner";
 import { StyleSheet } from "react-native";
+import { Link } from "expo-router";
 
 export default function Index() {
   return (
@@ -60,6 +61,8 @@ export default function Index() {
             FOREIGN KEY (user_id) REFERENCES users(id),
             FOREIGN KEY (course_id) REFERENCES courses(COURSES_ID)
           );
+
+          
           PRAGMA journal_mode=WAL;
           pragma foreign_keys=ON;
         `);
@@ -68,6 +71,7 @@ export default function Index() {
         <SafeAreaProvider style={styles.Safecontainer}>
         <SafeAreaView style={styles.container}>
         <Homebanner />
+        <Link href="/(student)/dashboard"> clic </Link>
       </SafeAreaView>    
       </SafeAreaProvider>  
    </SQLiteProvider>); 

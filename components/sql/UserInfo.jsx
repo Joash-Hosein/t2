@@ -2,17 +2,18 @@ import { useEffect, useState } from "react";
 import { View, Text, FlatList, StyleSheet , RefreshControl} from "react-native";
 import { useSQLiteContext } from "expo-sqlite";
 
-const UserList = () => {
-    const [Users, setUsers] = useState([]);
+const UserInfo = () => {
+
+    const { db } = useSQLiteContext();
     const [isLoading, setIsLoading] = useState(false);
-    const db = useSQLiteContext();
-
-
-    const loadUsers= async () => {
-        try {
+    const [users, setUsers] = useState([]);
+    
+    const loadUser = async () => {
+        try{
             setIsLoading(true);
-            const results = await db.getAllAsync(`SELECT * FROM users ORDER BY id DESC`);
-            setUsers(results);
+            const results = await db.executeSqlAsync("SELECT * FROM users");
+            const usersData = results[0].rows._array;
+            setUsers (usersData);
         } catch (error) {
             console.error("Failed to load users:", error);
         } finally {
@@ -20,39 +21,36 @@ const UserList = () => {
         }
     };
 
-
     useEffect(() => {
-        loadUsers();
+        loadUser();
     }, []);
     if (isLoading) {
         return (
-            <View style={styles.container}> 
+            <View style={styles.container}>
                 <Text>Loading users...</Text>
             </View>
         );
+    
     }
+    
     return (
-        <View style={styles.container}>
+        <View style={styles.container}> 
             <FlatList
-                data={Users}
+                data={users}
                 refreshControl={
-                    <RefreshControl refreshing={isLoading} onRefresh={loadUsers} />
+                    <RefreshControl refreshing={isLoading} onRefresh={loadUser} />
                 }
-                keyExtractor={(item) => item.id.toString()}
                 renderItem={({ item }) => (
                     <View style={styles.userItem}>
                         <Text style={styles.userName}>{item.name}</Text>
-                        <Text>{item.email}</Text>
-                        <Text>{item.password}</Text>
-                        <Text>{item.language}</Text>
-                    </View>
+        </View>
                 )}
                 ListEmptyComponent={<Text>No users found.</Text>}
             />
-        </View>
+            </View>
     );
  }   
-export default UserList;
+export default UserInfo;
 
 const styles = StyleSheet.create({
     container: {
