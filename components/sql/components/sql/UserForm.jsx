@@ -1,0 +1,76 @@
+import {useState} from 'react';
+import { View, TextInput, Button, Text, StyleSheet, Alert } from 'react-native';
+import { useSQLiteContext } from 'expo-sqlite';
+
+const UserForm = () => {
+    const [form, setForm] = useState({
+        name: '',
+        email: '',
+        password: '',
+        language: ''
+    });
+    const db = useSQLiteContext();
+
+    const handleSubmit = async () => {
+        try {
+            
+            if (!form.name || !form.email || !form.password || !form.language) {
+                throw new Error("All fields are required.");
+            }
+            await db.runAsync(
+                `INSERT INTO users (name, email, password, language) VALUES (?, ?, ?, ?)`,
+                [form.name, form.email, form.password, form.language]
+            );
+            Alert.alert("Success", "User added successfully!");
+            setForm({ name: '', email: '', password: '', language: '' });
+        } catch (error) {
+            Alert.alert("Error", error.message);
+        }
+    }
+
+    return (
+        <View style={styles.container}>
+            <TextInput
+                style={styles.input}
+                placeholder="Name"
+                value={form.name}
+                onChangeText={text => setForm({...form, name: text})}
+            />
+            <TextInput
+                style={styles.input}
+                placeholder="Email"
+                value={form.email}
+                onChangeText={text => setForm({...form, email: text})}
+            />
+            <TextInput
+                style={styles.input}
+                placeholder="Password"
+                secureTextEntry
+                value={form.password}
+                onChangeText={text => setForm({...form, password: text})}
+            />
+            <TextInput
+                style={styles.input}
+                placeholder="Language"
+                value={form.language}
+                onChangeText={text => setForm({...form, language: text})}
+            />
+            <Button title="Submit" onPress={handleSubmit} />
+        </View>
+    );
+};
+
+const styles = StyleSheet.create({
+    container: {
+        padding: 20,
+    },
+    input: {
+        height: 40,
+        borderColor: 'gray',
+        borderWidth: 1,
+        marginBottom: 10,
+        paddingHorizontal: 10,
+    },
+});
+
+export default UserForm;
