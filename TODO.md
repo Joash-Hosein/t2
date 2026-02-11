@@ -1,0 +1,6 @@
+- [x] Update imports in components/sql/Course_content.tsx: remove expo-av, add expo-video and expo-audio
+- [x] Replace Video component for videos with expo-video Video
+- [x] Replace Video component for audios with expo-audio Audio.Sound and custom controls
+- [x] Add state and functions for audio playback (play/pause, loading)
+- [x] Update renderAudioItem to include play/pause buttons
+- [x] Test the changes
