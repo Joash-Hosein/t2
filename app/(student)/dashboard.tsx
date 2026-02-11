@@ -5,32 +5,30 @@ import { StyleSheet, View } from 'react-native'
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
 import Sbanner from '../../components/banners/Sbanner'
 import UserInfo from '../../components/sql/UserInfo'
-import { SQLiteProvider } from 'expo-sqlite'
 
 const dashboard = () => {
   return (
-    <SQLiteProvider databaseName="icm.db">
     <SafeAreaProvider>
-      <SafeAreaView>
+      <SafeAreaView style={styles.Safecontainer}>
       <Sbanner />
       <CustomText variant='heading' style={{alignSelf: 'center'}}>
          Hi, Welcome to ICM learning and Resource Application
       </CustomText>
+      
       <View style={styles.container}>
         <CustomText variant='body'>
           Let's Learn!
         </CustomText>
         <UserInfo />
-        <Link href="https://icm.org" style={styles.card}>   
+        <Link href="https://icm.org" style={styles.card}>
         <CustomText variant='body' style={{alignSelf: 'center', color: 'white'}}>
           Click Here for more about ICM
         </CustomText>
          </Link>
-        
+
       </View>
       </SafeAreaView>
     </SafeAreaProvider>
-    </SQLiteProvider>
   )
 }
 
@@ -43,8 +41,9 @@ const styles = StyleSheet.create({
     container: {
     alignItems: 'center',
     justifyContent: 'center',
-    height: '40%',
-    margin: 10
+    height: '90%',
+    margin: 10,
+    padding: 10,
   },
   card: {
     backgroundColor: '#324599',

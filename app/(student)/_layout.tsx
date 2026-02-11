@@ -1,12 +1,29 @@
+import { useRouter } from 'expo-router';
 import { Drawer } from 'expo-router/drawer';
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useAuth } from '../../contexts/AuthContext';
 
 // Importing icon library
 import Feather from '@expo/vector-icons/Feather';
 
-
-
 const _layout = () => {
+  const { userId, isLoading } = useAuth();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!isLoading && !userId) {
+      router.replace('/login');
+    }
+  }, [userId, isLoading, router]);
+
+  if (isLoading) {
+    return null; // Or a loading screen
+  }
+
+  if (!userId) {
+    return null; // Prevent rendering if not logged in
+  }
+
   return (
     <Drawer screenOptions={{
         headerStyle: { backgroundColor: '#324599' },
@@ -38,6 +55,12 @@ const _layout = () => {
         title: 'Progress Tracker',
         drawerIcon: ({color, size}: {color: string, size: number}) => (
           <Feather name="pie-chart" size={size} color="#324599" />
+        ), }}
+      />
+      <Drawer.Screen name="logout" options={{
+        title: 'Logout',
+        drawerIcon: ({color, size}: {color: string, size: number}) => (
+          <Feather name="log-out" size={size} color="#324599" />
         ), }}
       />
 

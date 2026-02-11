@@ -6,8 +6,8 @@ import Sbanner from '../../components/banners/Sbanner';
 // Sample data for mockup
 const overallProgress = 75; // Percentage
 const courses = [
-  { id: 1, name: 'Study of the New Testament', progress: 90.2, image: require('../../assets/course_images/course-01.png') },
-  { id: 2, name: 'Study of the Old Testament', progress: 62.5, image: require('../../assets/course_images/course-02.png') },
+  { id: 1, name: 'Study of the New Testament', progress: 90.2, image: require('../../assets/course-images/course-01.png') },
+  { id: 2, name: 'Study of the Old Testament', progress: 62.5, image: require('../../assets/course-images/course-02.png') },
 ];
 
 const progresstracker = () => {
