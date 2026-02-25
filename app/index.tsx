@@ -1,8 +1,9 @@
+import { ResizeMode, Video } from "expo-av";
+import { Link } from "expo-router";
 import { SQLiteProvider } from "expo-sqlite";
+import { StyleSheet, View } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import Homebanner from "../components/banners/homebanner";
-import { StyleSheet } from "react-native";
-import { Link } from "expo-router";
 
 export default function Index() {
   return (
@@ -71,6 +72,14 @@ export default function Index() {
         <SafeAreaProvider style={styles.Safecontainer}>
         <SafeAreaView style={styles.container}>
         <Homebanner />
+        <View style={styles.videoContainer}>
+          <Video
+            source={{ uri: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" }}
+            style={styles.video}
+            useNativeControls
+            resizeMode={ResizeMode.CONTAIN}
+          />
+        </View>
         <Link href="/(student)/dashboard"> clic </Link>
       </SafeAreaView>    
       </SafeAreaProvider>  
@@ -96,5 +105,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     height: 150,
     alignItems: 'center',
+  },
+  videoContainer: {
+    width: '100%',
+    height: 200,
+    backgroundColor: '#000',
+    marginVertical: 10,
+  },
+  video: {
+    width: '100%',
+    height: '100%',
   }
 })
