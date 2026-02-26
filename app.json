@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "t2",
-    "slug": "t2",
+    "slug": "lms",
     "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -60,8 +60,9 @@
     "extra": {
       "router": {},
       "eas": {
-        "projectId": "8982e265-e887-4f9b-bd9c-f89a2bced061"
+        "projectId": "001dc103-9855-4d37-b58a-5142794c0217"
       }
-    }
+    },
+    "owner": "kyo213"
   }
 }
