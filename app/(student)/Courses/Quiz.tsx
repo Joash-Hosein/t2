@@ -4,7 +4,7 @@ import React from 'react'
 const Quiz = () => {
   return (
     <View>
-      <Text>quiz</Text>
+      <Text>To Be Added</Text>
     </View>
   )
 }

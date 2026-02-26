@@ -1,10 +1,11 @@
-import {useState} from 'react';
-import { View, TextInput, Button, Text, StyleSheet, Alert } from 'react-native';
 import { useSQLiteContext } from 'expo-sqlite';
+import { useState } from 'react';
+import { Alert, Button, StyleSheet, TextInput, View } from 'react-native';
 
 const UserForm = () => {
     const [form, setForm] = useState({
         name: '',
+        username: '',
         email: '',
         password: '',
         language: ''
@@ -14,15 +15,15 @@ const UserForm = () => {
     const handleSubmit = async () => {
         try {
             
-            if (!form.name || !form.email || !form.password || !form.language) {
+            if (!form.name || !form.username || !form.email || !form.password || !form.language) {
                 throw new Error("All fields are required.");
             }
             await db.runAsync(
-                `INSERT INTO users (name, email, password, language) VALUES (?, ?, ?, ?)`,
-                [form.name, form.email, form.password, form.language]
+                `INSERT INTO users (fullname, username, email, password, language) VALUES (?, ?, ?, ?, ?)`,
+                [form.name, form.username, form.email, form.password, form.language]
             );
             Alert.alert("Success", "User added successfully!");
-            setForm({ name: '', email: '', password: '', language: '' });
+            setForm({ name: '', username: '', email: '', password: '', language: '' });
         } catch (error) {
             Alert.alert("Error", error.message);
         }
@@ -35,6 +36,12 @@ const UserForm = () => {
                 placeholder="Name"
                 value={form.name}
                 onChangeText={text => setForm({...form, name: text})}
+            />
+            <TextInput
+                style={styles.input}
+                placeholder="Username"
+                value={form.username}
+                onChangeText={text => setForm({...form, username: text})}
             />
             <TextInput
                 style={styles.input}

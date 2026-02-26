@@ -4,7 +4,7 @@ import React from 'react'
 const grades = () => {
   return (
     <View>
-      <Text>grades</Text>
+      <Text>To Be Added</Text>
     </View>
   )
 }
