@@ -80,6 +80,51 @@ const _layout = () => {
           ('1','http://10.42.0.1/videos/ENG-MBC-OTS-01.mp4','811','Introduction to the Bible#1 What is the Bible','http://10.42.0.1/Audio/ENG-MBC-OTS-01.mp3','1676','Lesson 1'),
           ('1','http://10.42.0.1/videos/ENG-MBC-OTS-02.mp4','882','Introduction to the Bible#2 The Purpose of the Bible','http://10.42.0.1/Audio/ENG-MBC-OTS-02.mp3','1687','Lesson 2'),
           ('1','http://10.42.0.1/videos/ENG-MBC-OTS-03.mp4','638','Introduction to the Bible#3 How to study the bible','http://10.42.0.1/Audio/ENG-MBC-OTS-03.mp3','1691','Lesson 3');
+          ('2','http://10.42.0.1/videos/ENG-MBC-OTS-04.mp4','720','Genesis#1 Genesis and Creation','http://10.42.0.1/Audio/ENG-MBC-OTS-04.mp3','1692','Lesson 4');
+          ('2','http://10.42.0.1/videos/ENG-MBC-OTS-05.mp4','720','Genesis#2 The Birth of Mankind: The Story of Adam and Eve','http://10.42.0.1/Audio/ENG-MBC-OTS-05.mp3','1693','Lesson 5');
+          ('2','http://10.42.0.1/videos/ENG-MBC-OTS-06.mp4','720','Genesis#3 Where are you; Story and Fall','http://10.42.0.1/Audio/ENG-MBC-OTS-06.mp3','1694','Lesson 6');
+          ('2','http://10.42.0.1/videos/ENG-MBC-OTS-07.mp4','720','Genesis#4 Where is Your Brother Story of Cain and Abel','http://10.42.0.1/Audio/ENG-MBC-OTS-07.mp3','1695','Lesson 7');
+          ('2','http://10.42.0.1/videos/ENG-MBC-OTS-08.mp4','720','Genesis#5 Father of Faith: Story of Abraham','http://10.42.0.1/Audio/ENG-MBC-OTS-08.mp3','1696','Lesson 8');
+          ('2','http://10.42.0.1/videos/ENG-MBC-OTS-09.mp4','720','Genesis#6 Who are you: The Story of Jacob','http://10.42.0.1/Audio/ENG-MBC-OTS-09.mp3','1697','Lesson 9');
+          ('2','http://10.42.0.1/videos/ENG-MBC-OTS-10.mp4','720','Genesis#7 The God whois in charge: The Story of Joseph','http://10.42.0.1/Audio/ENG-MBC-OTS-10.mp3','1698','Lesson 10');
+          ('2','http://10.42.0.1/videos/ENG-MBC-OTS-11.mp4','720','Exodus#1 Moses learns Humility','http://10.42.0.1/Audio/ENG-MBC-OTS-11.mp3','1696','Lesson 11');
+          ('2','http://10.42.0.1/videos/ENG-MBC-OTS-12.mp4','720','Exodus#2 Moses learns the 4 Spiritual Laws','http://10.42.0.1/Audio/ENG-MBC-OTS-12.mp3','1697','Lesson 12');
+          ('2','http://10.42.0.1/videos/ENG-MBC-OTS-13.mp4','720','Exodus#3 Principles of Deliverance The Story of Exodus','http://10.42.0.1/Audio/ENG-MBC-OTS-13.mp3','1698','Lesson 13');
+          ('2','http://10.42.0.1/videos/ENG-MBC-OTS-14.mp4','720','Exodus#4 The 10 commandments','http://10.42.0.1/Audio/ENG-MBC-OTS-14.mp3','1696','Lesson 14');
+          ('3','http://10.42.0.1/videos/ENG-MBC-OTS-15.mp4','720','Leviticus#1 Nadab, Abihu and Holiness','http://10.42.0.1/Audio/ENG-MBC-OTS-15.mp3','1696','Lesson 15');
+          ('3','http://10.42.0.1/videos/ENG-MBC-OTS-16.mp4','720','Leviticus#2 Approaching the Holy One','http://10.42.0.1/Audio/ENG-MBC-OTS-16.mp3','1697','Lesson 16');
+          ('3','http://10.42.0.1/videos/ENG-MBC-OTS-17.mp4','720','Leviticus#3 The Tent of Worship','http://10.42.0.1/Audio/ENG-MBC-OTS-17.mp3','1698','Lesson 17');
+          ('3','http://10.42.0.1/videos/ENG-MBC-OTS-18.mp4','720','Numbers#1 The Level Of Decision','http://10.42.0.1/Audio/ENG-MBC-OTS-18.mp3','1699','Lesson 18');
+          ('3','http://10.42.0.1/videos/ENG-MBC-OTS-19.mp4','720','Numbers#2 Allegories in the Wilderness','http://10.42.0.1/Audio/ENG-MBC-OTS-19.mp3','1700','Lesson 19');
+          ('3','http://10.42.0.1/videos/ENG-MBC-OTS-20.mp4','720','Numbers#3 Why Moses?','http://10.42.0.1/Audio/ENG-MBC-OTS-20.mp3','1701','Lesson 20');
+          ('3','http://10.42.0.1/videos/ENG-MBC-OTS-21.mp4','720','Deuteronomy#1 Teach it to your children','http://10.42.0.1/Audio/ENG-MBC-OTS-21.mp3','1702','Lesson 21');
+          ('3','http://10.42.0.1/videos/ENG-MBC-OTS-22.mp4','720','Deuteronomy#2 The Magnificent Sermons of Moses','http://10.42.0.1/Audio/ENG-MBC-OTS-22.mp3','1703','Lesson 22');
+          ('3','http://10.42.0.1/videos/ENG-MBC-OTS-23.mp4','720','Deuteronomy#3 More Magnificent Sermons of Moses','http://10.42.0.1/Audio/ENG-MBC-OTS-23.mp3','1704','Lesson 23');
+          ('3','http://10.42.0.1/videos/ENG-MBC-OTS-24.mp4','720','Joshua#1 Possess Your Possessions The Story of the Conquest of Canaan','http://10.42.0.1/Audio/ENG-MBC-OTS-24.mp3','1705','Lesson 24');
+          ('3','http://10.42.0.1/videos/ENG-MBC-OTS-25.mp4','720','Joshua#2 A Panorama of Faith: The Story of the Conquest of Jericho','http://10.42.0.1/Audio/ENG-MBC-OTS-25.mp3','1706','Lesson 25');
+          ('3','http://10.42.0.1/videos/ENG-MBC-OTS-26.mp4','720','Joshua#3 Struggles in the Hourney of Faith: The Story of Achan and the Conquest of Ai','http://10.42.0.1/Audio/ENG-MBC-OTS-26.mp3','1707','Lesson 26');
+          ('4','http://10.42.0.1/videos/ENG-MBC-OTS-27.mp4','720','Introduction to the Historical Books: Why We Study Hebrew History','http://10.42.0.1/Audio/ENG-MBC-OTS-27.mp3','1708','Lesson 27');
+          ('4','http://10.42.0.1/videos/ENG-MBC-OTS-28.mp4','720','Judges#1 The Agonies of Apostasy','http://10.42.0.1/Audio/ENG-MBC-OTS-28.mp3','1709','Lesson 28');
+          ('4','http://10.42.0.1/videos/ENG-MBC-OTS-29.mp4','720','Judges#2 Extraordinary Things through Ordinary People','http://10.42.0.1/Audio/ENG-MBC-OTS-29.mp3','1710','Lesson 29');
+          ('4','http://10.42.0.1/videos/ENG-MBC-OTS-30.mp4','720','Judges#3 Every Man in His Place: The story of Gideon','http://10.42.0.1/Audio/ENG-MBC-OTS-30.mp3','1711','Lesson 30');
+          ('4','http://10.42.0.1/videos/ENG-MBC-OTS-31.mp4','720','Ruth#1 Hope in th Darkness THe Story of Naomi','http://10.42.0.1/Audio/ENG-MBC-OTS-31.mp3','1712','Lesson 31');
+          ('4','http://10.42.0.1/videos/ENG-MBC-OTS-32.mp4','720','Ruth#2 Th Romance of Redemption: The story of Ruth and Boaz','http://10.42.0.1/Audio/ENG-MBC-OTS-32.mp3','1713','Lesson 32');
+          ('4','http://10.42.0.1/videos/ENG-MBC-OTS-33.mp4','720','1 Samuel#1 The Kingdom of God: A survey of 1st & 2nd Samuel','http://10.42.0.1/Audio/ENG-MBC-OTS-33.mp3','1714','Lesson 33');
+          ('4','http://10.42.0.1/videos/ENG-MBC-OTS-34.mp4','720','1 Samuel#2 Samuel, Saul and David','http://10.42.0.1/Audio/ENG-MBC-OTS-34.mp3','1715','Lesson 34');
+          ('4','http://10.42.0.1/videos/ENG-MBC-OTS-35.mp4','720','1 Samuel#3 A Man after Gods own Heart','http://10.42.0.1/Audio/ENG-MBC-OTS-35.mp3','1716','Lesson 35');
+          ('4','http://10.42.0.1/videos/ENG-MBC-OTS-36.mp4','720','2 Samuel#1 How to Fail Successfully','http://10.42.0.1/Audio/ENG-MBC-OTS-36.mp3','1717','Lesson 36');
+          ('4','http://10.42.0.1/videos/ENG-MBC-OTS-37.mp4','720','2 Samuel#2 The Blessedness of Forgiveness','http://10.42.0.1/Audio/ENG-MBC-OTS-37.mp3','1718','Lesson 37');
+          ('4','http://10.42.0.1/videos/ENG-MBC-OTS-38.mp4','720','2 Samuel#3 Godly Character on Display','http://10.42.0.1/Audio/ENG-MBC-OTS-38.mp3','1719','Lesson 38');
+          ('4','http://10.42.0.1/videos/ENG-MBC-OTS-39.mp4','720','Kings#1 Kings and Prophets','http://10.42.0.1/Audio/ENG-MBC-OTS-39.mp3','1720','Lesson 39');
+          ('4','http://10.42.0.1/videos/ENG-MBC-OTS-40.mp4','720','Kings#2 Examples and Warnings from Kings','http://10.42.0.1/Audio/ENG-MBC-OTS-40.mp3','1721','Lesson 40');
+          ('4','http://10.42.0.1/videos/ENG-MBC-OTS-41.mp4','720','Chronicles: Another Inspired perspective','http://10.42.0.1/Audio/ENG-MBC-OTS-41.mp3','1722','Lesson 41');
+          ('4','http://10.42.0.1/videos/ENG-MBC-OTS-42.mp4','720','Ezra and Nehemiah#1 God's Work','http://10.42.0.1/Audio/ENG-MBC-OTS-42.mp3','1723','Lesson 42');
+          ('4','http://10.42.0.1/videos/ENG-MBC-OTS-43.mp4','720','Ezra and Nehemiah#2 Oppostion to God's Work','http://10.42.0.1/Audio/ENG-MBC-OTS-43.mp3','1724','Lesson 43');
+          ('4','http://10.42.0.1/videos/ENG-MBC-OTS-44.mp4','720','Ezra and Nehemiah#3 Characters of a Godly Leader','http://10.42.0.1/Audio/ENG-MBC-OTS-44.mp3','1725','Lesson 44');
+          ('4','http://10.42.0.1/videos/ENG-MBC-OTS-45.mp4','720','Esther#1 The Providence of God in the Story of Esther','http://10.42.0.1/Audio/ENG-MBC-OTS-45.mp3','1726','Lesson 45');
+          ('5','http://10.42.0.1/videos/ENG-MBC-OTS-46.mp4','720','Introduction to Biblical Poetry: THe language of the Heart','http://10.42.0.1/Audio/ENG-MBC-OTS-46.mp3','1727','Lesson 46');
+          ('5','http://10.42.0.1/videos/ENG-MBC-OTS-47.mp4','720','Job#1 Hurting Hearts','http://10.42.0.1/Audio/ENG-MBC-OTS-47.mp3','1728','Lesson 47');
+          
 
           
           PRAGMA journal_mode=WAL;
