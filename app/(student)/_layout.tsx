@@ -35,6 +35,7 @@ const _layout = () => {
           <Feather name="book-open" size={size} color="#324599" />
         ), }}/>
       <Drawer.Screen name="progresstracker" options={{
+        drawerItemStyle: { display: 'none' },
         title: 'Progress Tracker',
         drawerIcon: ({color, size}: {color: string, size: number}) => (
           <Feather name="pie-chart" size={size} color="#324599" />
