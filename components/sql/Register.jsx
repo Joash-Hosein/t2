@@ -1,8 +1,8 @@
+import { Link } from 'expo-router';
 import { useSQLiteContext } from 'expo-sqlite';
 import { useState } from 'react';
-import { Alert, Button, TextInput, StyleSheet } from 'react-native';
+import { Alert, Button, StyleSheet, TextInput } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Link } from 'expo-router';
 
 
 const Register = () => {
@@ -25,7 +25,7 @@ const Register = () => {
                 `INSERT INTO users (fullname, username, email, password, language) VALUES (?, ?, ?, ?, ?)`,
                 [form.fullname, form.username, form.email, form.password, form.language]
             );
-            Alert.alert("Success", "User registered successfully!");
+            Alert.alert("Success", "User registered successfully! Please login.");
             setForm({ fullname: '', username: '', email: '', password: '', language: '' });
         } catch (error) {
             Alert.alert("Error", error.message);

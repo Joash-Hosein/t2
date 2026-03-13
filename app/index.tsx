@@ -3,16 +3,26 @@ import { Link } from "expo-router";
 import { StyleSheet, View } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import Homebanner from "../components/banners/homebanner";
+import { useAuth } from "../contexts/AuthContext";
+import { AuthProvider } from "../contexts/AuthContext";
+import { SQLiteProvider } from "expo-sqlite";
+import { useRouter } from "expo-router";
 
 export default function Index() {
+  const { user } = useAuth();
+  const router = useRouter();
+
   return (
-   
         <SafeAreaProvider style={styles.Safecontainer}>
         <SafeAreaView style={styles.container}>
         <Homebanner />
           <View style={styles.card}>
-        <Link href="/(student)/dashboard"> clic </Link>
-        </View>
+            {user ? (
+              <Link href="/(student)/dashboard">Go to Dashboard</Link>
+            ) : (
+              <Link href="/(auth)/login">Login to access courses</Link>
+            )}
+          </View>
       </SafeAreaView>    
 
       </SafeAreaProvider> 

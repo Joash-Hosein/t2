@@ -1,13 +1,38 @@
-import { Stack } from 'expo-router';
+import { Stack, usePathname, useRouter } from 'expo-router';
 import { SQLiteProvider } from 'expo-sqlite';
-import React from 'react';
+import React, { useEffect } from 'react';
+import { AuthProvider, useAuth } from '../contexts/AuthContext';
+
+
+const RootLayoutNav = () => {
+  const { user, loading } = useAuth();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  useEffect(() => {
+    if (!loading) {
+      if (user && pathname.startsWith('/(auth)')) {
+        router.replace('/(student)/dashboard');
+      } else if (!user && !pathname.startsWith('/(auth)') && pathname !== '/') {
+        router.replace('/(auth)/login');
+      }
+    }
+}, [user, loading, pathname]);
+
+  // if (loading) {
+    // return null; // Loading screen
+  // }
+
+  return <Stack screenOptions={{headerShown: false}}/>;
+};
 
 const _layout = () => {
   return (
-    <SQLiteProvider
+    <AuthProvider>
+      <SQLiteProvider
         databaseName="icm4.db"
-      onInit={async (db) => {
-        await db.execAsync(`
+        onInit={async (db) => {
+          await db.execAsync(`
           CREATE TABLE IF NOT EXISTS users (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             fullname TEXT NOT NULL,
@@ -259,6 +284,7 @@ const _layout = () => {
     <Stack 
       screenOptions={{headerShown: false}}/>
       </SQLiteProvider>
+      </AuthProvider>
   )
 }
 

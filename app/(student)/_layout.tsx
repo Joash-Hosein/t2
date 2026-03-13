@@ -1,12 +1,25 @@
+import { useRouter } from 'expo-router';
 import { Drawer } from 'expo-router/drawer';
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useAuth } from '../../contexts/AuthContext';
 
 // Importing icon library
 import Feather from '@expo/vector-icons/Feather';
 
-
-
 const _layout = () => {
+  const router = useRouter();
+  const { user } = useAuth();
+
+  useEffect(() => {
+    if (!user) {
+      router.replace('/(auth)/login');
+    }
+  }, [user]);
+
+  if (!user) {
+    return null;
+  }
+
   return (
     <Drawer screenOptions={{
         headerStyle: { backgroundColor: '#324599' },
@@ -42,7 +55,7 @@ const _layout = () => {
         ), }}
       />
 
-      </Drawer>
+    </Drawer>
   )
 }
 

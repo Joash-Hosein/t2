@@ -1,12 +1,14 @@
-import { Link } from 'expo-router';
+import { Link, useRouter } from 'expo-router';
 import { useSQLiteContext } from 'expo-sqlite';
 import React, { useState } from 'react';
 import { Alert, Button, StyleSheet, TextInput } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-
+import { useAuth } from '../../contexts/AuthContext';
 
 const Login = () => {
     const db = useSQLiteContext();
+    const router = useRouter();
+    const { login } = useAuth();
     const [form, setForm] = useState({
         username: '',
         password: ''
@@ -23,14 +25,13 @@ const Login = () => {
             if (results.length === 0) {
                 throw new Error("Invalid username or password.");
             }
-            Alert.alert("Success", "Login successful!");
-            
+            const userData = results[0];
+            await login(userData);
             setForm({ username: '', password: '' });
         } catch (error) {
             Alert.alert("Error", error.message);
         }
-     
-        }
+    }
     
   return (
     <SafeAreaView style={styles.container}>
@@ -50,9 +51,6 @@ const Login = () => {
         <Button title="Login" onPress={handleSubmit} />
         <Link href="/register" style={styles.link}> register</Link>
     </SafeAreaView>
-
-     
-
     )
 }
 
