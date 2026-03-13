@@ -161,27 +161,27 @@ const Course = () => {
       } else if (imageName.includes('02')) {
         return require('../../../assets/course_images/course-02.png');
       } else if (imageName.includes('03')) {
-        return require('../../../assets/course_images/course-01.png');
+        return require('../../../assets/course_images/course-03.png');
       } else if (imageName.includes('04')) {
-        return require('../../../assets/course_images/course-02.png');
+        return require('../../../assets/course_images/course-04.png');
       } else if (imageName.includes('05')) {
-        return require('../../../assets/course_images/course-01.png');
+        return require('../../../assets/course_images/course-05.png');
       } else if (imageName.includes('06')) {
-        return require('../../../assets/course_images/course-02.png');
+        return require('../../../assets/course_images/course-06.png');
       } else if (imageName.includes('07')) {
-        return require('../../../assets/course_images/course-01.png');
+        return require('../../../assets/course_images/course-07.png');
       } else if (imageName.includes('08')) {
-        return require('../../../assets/course_images/course-02.png');
+        return require('../../../assets/course_images/course-08.png');
       } else if (imageName.includes('09')) {
-        return require('../../../assets/course_images/course-01.png');
+        return require('../../../assets/course_images/course-09.png');
       } else if (imageName.includes('10')) {
-        return require('../../../assets/course_images/course-02.png');
+        return require('../../../assets/course_images/course-10.png');
       } else if (imageName.includes('11')) {
-        return require('../../../assets/course_images/course-01.png');
+        return require('../../../assets/course_images/course-11.png');
       } else if (imageName.includes('12')) {
-        return require('../../../assets/course_images/course-02.png');
+        return require('../../../assets/course_images/course-12.png');
       } else if (imageName.includes('13')) {
-        return require('../../../assets/course_images/course-01.png');
+        return require('../../../assets/course_images/course-13.png');
       }
       // Default fallback
       return require('../../../assets/course_images/course-01.png');
