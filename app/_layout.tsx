@@ -30,7 +30,7 @@ const _layout = () => {
   return (
     <AuthProvider>
       <SQLiteProvider
-        databaseName="icm4.db"
+        databaseName="icm5.db"
         onInit={async (db) => {
           await db.execAsync(`
           CREATE TABLE IF NOT EXISTS users (

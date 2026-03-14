@@ -9,7 +9,7 @@ import { SQLiteProvider } from 'expo-sqlite'
 
 const dashboard = () => {
   return (
-    <SQLiteProvider databaseName="icm.db">
+    <SQLiteProvider databaseName="icm5.db">
     <SafeAreaProvider>
       <SafeAreaView>
       <Sbanner />
