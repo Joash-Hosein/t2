@@ -42,8 +42,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         const storedUser = await AsyncStorage.getItem('user');
         if (storedUser) {
           setUser(JSON.parse(storedUser));
-          // Redirect to student dashboard if logged in
-          router.replace('/(student)/dashboard');
         }
       } catch (error) {
         console.error('Failed to load user:', error);
