@@ -3,6 +3,7 @@ import { useSQLiteContext } from 'expo-sqlite';
 import { VideoView, useVideoPlayer } from 'expo-video';
 import React, { useEffect, useState } from 'react';
 import {
+  ActivityIndicator,
   FlatList,
   Image,
   Modal,
@@ -36,20 +37,53 @@ interface ContentItem {
 }
 
 // Separate component for video items (defined outside to follow Rules of Hooks)
-const VideoItem = ({ videoUrl, title }: { videoUrl: string; title: string }) => {
+interface VideoItemProps {
+  videoUrl: string;
+  title: string;
+}
+
+const VideoItem: React.FC<VideoItemProps> = ({ videoUrl, title }) => {
   const player = useVideoPlayer(videoUrl, (player) => {
     player.loop = false;
   });
 
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    // Reset state when video URL changes
+    setLoading(true);
+    setError(null);
+  }, [videoUrl]);
+
   return (
     <View style={styles.contentItem}>
       <Text style={styles.contentTitle}>{title}</Text>
-      <VideoView
-        style={styles.video}
-        player={player}
-        allowsFullscreen
-        allowsPictureInPicture
-      />
+
+      {error ? (
+        <View style={styles.errorContainer}>
+          <Text style={styles.errorText}>
+            Video cannot be loaded. Please check your network or server.
+          </Text>
+          <Text style={styles.errorText}>{error}</Text>
+        </View>
+      ) : (
+        <>
+          {loading && (
+            <ActivityIndicator
+              size="large"
+              color="#324599"
+              style={styles.loader}
+            />
+          )}
+          <VideoView
+            style={styles.video}
+            player={player}
+            allowsFullscreen={true}
+            allowsPictureInPicture={true}
+          />
+        </>
+      )}
     </View>
   );
 };
@@ -432,6 +466,23 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontWeight: 'bold',
     fontSize: 16,
+  },
+  loader: {
+    position: 'absolute',
+    top: '40%',
+    left: '45%',
+    zIndex: 10,
+  },
+  errorContainer: {
+    padding: 20,
+    backgroundColor: '#ffe6e6',
+    borderRadius: 8,
+  },
+  errorText: {
+    color: '#ff0000',
+    fontSize: 14,
+    fontWeight: 'bold',
+    marginBottom: 5,
   },
 });
 
