@@ -1,21 +1,17 @@
 import Homebanner from '@/components/banners/homebanner';
-import { SQLiteProvider } from 'expo-sqlite';
 import React from 'react';
-import {  StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import Login from '../../components/sql/Login';
-import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 
 const login = () => {
   return (
-    <SQLiteProvider
-      databaseName="icm.db">
-        <SafeAreaProvider>
+    <SafeAreaProvider>
         <SafeAreaView style={{ flex: 1, backgroundColor: '#ffffffff' }}>
         <Homebanner />
       <Login/>
       </SafeAreaView>
       </SafeAreaProvider>
-    </SQLiteProvider>
   )
 }
 

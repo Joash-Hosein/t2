@@ -5,11 +5,8 @@ import { StyleSheet, View } from 'react-native'
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
 import Sbanner from '../../components/banners/Sbanner'
 import UserInfo from '../../components/sql/UserInfo'
-import { SQLiteProvider } from 'expo-sqlite'
-
 const dashboard = () => {
   return (
-    <SQLiteProvider databaseName="icm5.db">
     <SafeAreaProvider>
       <SafeAreaView>
       <Sbanner />
@@ -30,7 +27,6 @@ const dashboard = () => {
       </View>
       </SafeAreaView>
     </SafeAreaProvider>
-    </SQLiteProvider>
   )
 }
 

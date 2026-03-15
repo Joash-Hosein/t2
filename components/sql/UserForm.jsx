@@ -4,7 +4,7 @@ import { Alert, Button, StyleSheet, TextInput, View } from 'react-native';
 
 const UserForm = () => {
     const [form, setForm] = useState({
-        name: '',
+        fullname: '',
         username: '',
         email: '',
         password: '',
@@ -15,15 +15,15 @@ const UserForm = () => {
     const handleSubmit = async () => {
         try {
             
-            if (!form.name || !form.username || !form.email || !form.password || !form.language) {
+            if (!form.fullname || !form.username || !form.email || !form.password || !form.language) {
                 throw new Error("All fields are required.");
             }
             await db.runAsync(
                 `INSERT INTO users (fullname, username, email, password, language) VALUES (?, ?, ?, ?, ?)`,
-                [form.name, form.username, form.email, form.password, form.language]
+                [form.fullname, form.username, form.email, form.password, form.language]
             );
             Alert.alert("Success", "User added successfully!");
-            setForm({ name: '', username: '', email: '', password: '', language: '' });
+            setForm({ fullname: '', username: '', email: '', password: '', language: '' });
         } catch (error) {
             Alert.alert("Error", error.message);
         }
@@ -33,9 +33,9 @@ const UserForm = () => {
         <View style={styles.container}>
             <TextInput
                 style={styles.input}
-                placeholder="Name"
-                value={form.name}
-                onChangeText={text => setForm({...form, name: text})}
+                placeholder="Full Name"
+                value={form.fullname}
+                onChangeText={text => setForm({...form, fullname: text})}
             />
             <TextInput
                 style={styles.input}
